@@ -1,6 +1,6 @@
 {
   "name": "@phikes/plain-date",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Date subclass and implementation without time. Comptaible with date-fns helpers.",
   "main": "dist/index.js",
   "repository": "https://github.com/phikes/plain-date",
