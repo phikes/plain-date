@@ -1,0 +1,28 @@
+{
+  "name": "@phikes/plain-date",
+  "version": "1.0.0",
+  "description": "A Date subclass and implementation without time. Comptaible with date-fns helpers.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/phikes/plain-date",
+  "author": "Phillip Kessels <info@phikes.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.3",
+    "typescript": "^5.5.4"
+  },
+  "types": "dist/index.d.ts",
+  "prepublish": "build",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "typescript",
+    "date",
+    "time",
+    "datetime",
+    "plaindate",
+    "notime"
+  ]
+}
