@@ -21,6 +21,12 @@ describe(PlainDate, () => {
         day: 1
       })
 
+      expect( new PlainDate(NaN)).toMatchObject({
+        year: NaN,
+        month: NaN,
+        day: NaN
+      })
+
       expect(new PlainDate(1994, 1)).toMatchObject({
         year: 1994,
         month: 1,
@@ -55,8 +61,12 @@ describe(PlainDate, () => {
       expect(PlainDate.fromString("1992-01-22T14:00")).toEqual(new PlainDate(1992, 0, 22))
     })
 
-    it("throws an error when incorrect date string is given", () => {
-      expect(() => PlainDate.fromString("abc")).toThrow()
+    it("returns an invalid date when string cannot be parsed", () => {
+      expect(PlainDate.fromString("abc")).toMatchObject({
+        year: NaN,
+        month: NaN,
+        day: NaN
+      })
     })
   })
 

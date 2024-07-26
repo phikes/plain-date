@@ -53,7 +53,7 @@ export class PlainDate extends Date implements Date {
 
   static fromString(dateString: string): PlainDate {
     const { year, month, day } = dateString.match(PlainDate.ISO8601DateFormat)?.groups ?? {}
-    if (!year || !month || !day) throw new Error(`Could not parse ${dateString} into PlainDate`)
+    if (!year || !month || !day) return new PlainDate(NaN)
 
     return new PlainDate(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10))
   }
