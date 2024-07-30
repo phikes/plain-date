@@ -280,8 +280,8 @@ describe(PlainDate, () => {
   })
 
   describe("setDate", () => {
-    it("returns the day", () => {
-      expect(new PlainDate(1992, 0, 22).setDate(1)).toEqual(1)
+    it("returns the ms since epoch", () => {
+      expect(new PlainDate(1992, 0, 22).setDate(1)).toEqual(new Date(1992, 0, 1).getTime())
     })
 
     it("sets the day", () => {

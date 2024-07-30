@@ -207,8 +207,15 @@ export class PlainDate extends Date implements Date {
     return this.getUTCHours()
   }
 
-  setDate(day: number): number {
-    return this._day = day
+  setDate(date: number): number {
+    const helperDate = new Date(this.getTime())
+    helperDate.setDate(date)
+
+    this._day = helperDate.getDate()
+    this._month = helperDate.getMonth()
+    this._year = helperDate.getFullYear()
+
+    return this.getTime()
   }
 
   setUTCDate(day: number): number {
