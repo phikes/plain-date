@@ -100,66 +100,35 @@ export class PlainDate extends Date implements Date {
   getFullYear(): number {
     return this.year
   }
-
-  getUTCFullYear(): number {
-    return this.year
-  }
+  getUTCFullYear = this.getFullYear
 
   getMonth(): number {
     return this.month
   }
-
-  getUTCMonth(): number {
-    return this.month
-  }
+  getUTCMonth = this.getMonth
 
   getDate(): number {
     return this.day
   }
-
-  getUTCDate(): number {
-    return this.day
-  }
+  getUTCDate = this.getDate
 
   getDay(): number {
     return new Date(this.year, this.month, this.day).getDay()
   }
+  getUTCDay = this.getDay
 
-  getUTCDay(): number {
-    return this.getDay()
+  getNaN(): number {
+    return NaN
   }
 
-  getHours(): number {
-    return -1
-  }
-
-  getUTCHours(): number {
-    return -1
-  }
-
-  getMinutes(): number {
-    return -1
-  }
-
-  getUTCMinutes(): number {
-    return -1
-  }
-
-  getSeconds(): number {
-    return -1
-  }
-
-  getUTCSeconds(): number {
-    return -1
-  }
-
-  getMilliseconds(): number {
-    return -1
-  }
-
-  getUTCMilliseconds(): number {
-    return -1
-  }
+  getHours = this.getNaN
+  getUTCHours = this.getNaN
+  getMinutes = this.getNaN
+  getUTCMinutes = this.getNaN
+  getSeconds = this.getNaN
+  getUTCSeconds = this.getNaN
+  getMilliseconds = this.getNaN
+  getUTCMilliseconds = this.getNaN
 
   getTimezoneOffset(): number {
     return 0
@@ -178,65 +147,52 @@ export class PlainDate extends Date implements Date {
   setMilliseconds(_ms: number): number {
     return this.getMilliseconds()
   }
-
-  setUTCMilliseconds(_ms: number): number {
-    return this.getUTCMilliseconds()
-  }
+  setUTCMilliseconds = this.setMilliseconds
 
   setSeconds(_s: number): number {
     return this.getSeconds()
   }
-
-  setUTCSeconds(_s: number): number {
-    return this.getUTCSeconds()
-  }
+  setUTCSeconds = this.setSeconds
 
   setMinutes(_min: number): number {
     return this.getMinutes()
   }
-
-  setUTCMinutes(_min: number): number {
-    return this.getUTCMinutes()
-  }
+  setUTCMinutes = this.setMinutes
 
   setHours(_h: number): number {
     return this.getHours()
   }
-
-  setUTCHours(_h: number): number {
-    return this.getUTCHours()
-  }
+  setUTCHours = this.setHours
 
   setDate(date: number): number {
     const helperDate = new Date(this.getTime())
     helperDate.setDate(date)
 
-    this._day = helperDate.getDate()
-    this._month = helperDate.getMonth()
-    this._year = helperDate.getFullYear()
+    this.assignFromDate(helperDate)
 
     return this.getTime()
   }
+  setUTCDate = this.setDate
 
-  setUTCDate(day: number): number {
-    return this._day = day
-  }
+  setMonth(month: number, date?: number): number {
+    const helperDate = new Date(this.getTime())
+    helperDate.setMonth(month, date ?? helperDate.getDate())
 
-  setMonth(month: number): number {
-    return this._month = month
-  }
+    this.assignFromDate(helperDate)
 
-  setUTCMonth(month: number): number {
-    return this._month = month
+    return this.getTime()
   }
+  setUTCMonth = this.setMonth
 
-  setFullYear(year: number): number {
-    return this._year = year
-  }
+  setFullYear(year: number, month?: number, date?: number): number {
+    const helperDate = new Date(this.getTime())
 
-  setUTCFullYear(year: number): number {
-    return this._year = year
+    helperDate.setFullYear(year, month ?? helperDate.getMonth(), date ?? helperDate.getDate())
+    this.assignFromDate(helperDate)
+
+    return this.getTime()
   }
+  setUTCFullYear = this.setFullYear
 
   toUTCString(): string {
     return this.toString()
@@ -248,5 +204,11 @@ export class PlainDate extends Date implements Date {
 
   toJSON(_key?: any): string {
     return this.toString()
+  }
+
+  protected assignFromDate(date: Date): void {
+    this._day = date.getDate()
+    this._month = date.getMonth()
+    this._year = date.getFullYear()
   }
 }

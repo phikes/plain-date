@@ -122,8 +122,10 @@ describe(PlainDate, () => {
   })
 
   describe("getUTCFullYear", () => {
-    it("returns the year", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCFullYear()).toEqual(1992)
+    it("is getFullYear", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCFullYear).toEqual(plainDate.getFullYear)
     })
   })
 
@@ -134,8 +136,10 @@ describe(PlainDate, () => {
   })
 
   describe("getUTCMonth", () => {
-    it("returns the month", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCMonth()).toEqual(0)
+    it("is getMonth", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCMonth).toEqual(plainDate.getMonth)
     })
   })
 
@@ -146,8 +150,10 @@ describe(PlainDate, () => {
   })
 
   describe("getUTCDate", () => {
-    it("returns the day of the month", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCDate()).toEqual(22)
+    it("is getDate", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCDate).toEqual(plainDate.getDate)
     })
   })
 
@@ -158,56 +164,80 @@ describe(PlainDate, () => {
   })
 
   describe("getUTCDay", () => {
-    it("returns the day of the week", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCDay()).toEqual(3)
+    it("is getDay", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCDay).toEqual(plainDate.getDay)
+    })
+  })
+
+  describe("getNaN", () => {
+    it("returns NaN", () => {
+      expect(new PlainDate(1992, 0, 22).getNaN()).toEqual(NaN)
     })
   })
 
   describe("getMinutes", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getMinutes()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getMinutes).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getUTCMinutes", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCMinutes()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCMinutes).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getHours", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getHours()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getHours).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getUTCHours", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCHours()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCHours).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getSeconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getSeconds()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getSeconds).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getUTCSeconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCSeconds()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCSeconds).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getMilliseconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getMilliseconds()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getMilliseconds).toEqual(plainDate.getNaN)
     })
   })
 
   describe("getUTCMilliseconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).getUTCMilliseconds()).toEqual(-1)
+    it("is getNaN", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.getUTCMilliseconds).toEqual(plainDate.getNaN)
     })
   })
 
@@ -232,50 +262,58 @@ describe(PlainDate, () => {
   })
 
   describe("setMilliseconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setMilliseconds(123)).toEqual(-1)
+    it("returns NaN", () => {
+      expect(new PlainDate(1992, 0, 22).setMilliseconds(123)).toEqual(NaN)
     })
   })
 
   describe("setUTCMilliseconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCMilliseconds(456)).toEqual(-1)
+    it("is setMilliseconds", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.setUTCMilliseconds).toEqual(plainDate.setMilliseconds)
     })
   })
 
   describe("setSeconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setSeconds(123)).toEqual(-1)
+    it("returns NaN", () => {
+      expect(new PlainDate(1992, 0, 22).setSeconds(123)).toEqual(NaN)
     })
   })
 
   describe("setUTCSeconds", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCSeconds(456)).toEqual(-1)
+    it("is setSeconds", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.setUTCSeconds).toEqual(plainDate.setSeconds)
     })
   })
 
   describe("setMinutes", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setMinutes(123)).toEqual(-1)
+    it("returns NaN", () => {
+      expect(new PlainDate(1992, 0, 22).setMinutes(123)).toEqual(NaN)
     })
   })
 
   describe("setUTCMinutes", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCMinutes(456)).toEqual(-1)
+    it("is setMinutes", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.setUTCMinutes).toEqual(plainDate.setMinutes)
     })
   })
 
   describe("setHours", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setHours(123)).toEqual(-1)
+    it("returns NaN", () => {
+      expect(new PlainDate(1992, 0, 22).setHours(123)).toEqual(NaN)
     })
   })
 
   describe("setUTCHours", () => {
-    it("returns -1", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCHours(456)).toEqual(-1)
+    it("is setHours", () => {
+      const plainDate = new PlainDate()
+
+      expect(plainDate.setUTCHours).toEqual(plainDate.setHours)
     })
   })
 
@@ -294,22 +332,16 @@ describe(PlainDate, () => {
   })
 
   describe("setUTCDate", () => {
-    it("returns the day", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCDate(1)).toEqual(1)
-    })
+    it("is setDate", () => {
+      const plainDate = new PlainDate()
 
-    it("sets the day", () => {
-      const plainDate = new PlainDate(1992, 0, 22)
-
-      plainDate.setUTCDate(1)
-
-      expect(plainDate.day).toEqual(1)
+      expect(plainDate.setUTCDate).toEqual(plainDate.setDate)
     })
   })
 
   describe("setMonth", () => {
-    it("returns the month", () => {
-      expect(new PlainDate(1992, 0, 22).setMonth(1)).toEqual(1)
+    it("returns the ms since epoch", () => {
+      expect(new PlainDate(1992, 0, 22).setMonth(1)).toEqual(new Date(1992, 1, 22).getTime())
     })
 
     it("sets the month", () => {
@@ -319,25 +351,30 @@ describe(PlainDate, () => {
 
       expect(plainDate.month).toEqual(1)
     })
+
+    it("sets the month and date", () => {
+      const plainDate = new PlainDate(1992, 0, 22)
+
+      plainDate.setMonth(1, 2)
+
+      expect(plainDate.month).toEqual(1)
+      expect(plainDate.day).toEqual(2)
+    })
   })
 
   describe("setUTCMonth", () => {
-    it("returns the month", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCMonth(1)).toEqual(1)
-    })
+    it("is setMonth", () => {
+      const plainDate = new PlainDate()
 
-    it("sets the month", () => {
-      const plainDate = new PlainDate(1992, 0, 22)
-
-      plainDate.setUTCMonth(1)
-
-      expect(plainDate.month).toEqual(1)
+      expect(plainDate.setUTCMonth).toEqual(plainDate.setMonth)
     })
   })
 
   describe("setFullYear", () => {
-    it("returns the year", () => {
-      expect(new PlainDate(1992, 0, 22).setFullYear(1993)).toEqual(1993)
+    it("returns the ms since epoch", () => {
+      expect(new PlainDate(1992, 0, 22).setFullYear(1993)).toEqual(new Date(1993, 0, 22).getTime())
+      expect(new PlainDate(1992, 0, 22).setFullYear(1993, 1)).toEqual(new Date(1993, 1, 22).getTime())
+      expect(new PlainDate(1992, 0, 22).setFullYear(1993, 1, 2)).toEqual(new Date(1993, 1, 2).getTime())
     })
 
     it("sets the year", () => {
@@ -347,19 +384,32 @@ describe(PlainDate, () => {
 
       expect(plainDate.year).toEqual(1993)
     })
+
+    it("sets the year and month", () => {
+      const plainDate = new PlainDate(1992, 0, 22)
+
+      plainDate.setFullYear(1993, 1)
+
+      expect(plainDate.year).toEqual(1993)
+      expect(plainDate.month).toEqual(1)
+    })
+
+    it("sets the year, month and date", () => {
+      const plainDate = new PlainDate(1992, 0, 22)
+
+      plainDate.setFullYear(1993, 1, 23)
+
+      expect(plainDate.year).toEqual(1993)
+      expect(plainDate.month).toEqual(1)
+      expect(plainDate.day).toEqual(23)
+    })
   })
 
   describe("setUTCFullYear", () => {
-    it("returns the year", () => {
-      expect(new PlainDate(1992, 0, 22).setUTCFullYear(1993)).toEqual(1993)
-    })
+    it('is toFullYear', () => {
+      const plainDate = new PlainDate()
 
-    it("sets the year", () => {
-      const plainDate = new PlainDate(1992, 0, 22)
-
-      plainDate.setUTCFullYear(1993)
-
-      expect(plainDate.year).toEqual(1993)
+      expect(plainDate.setFullYear).toEqual(plainDate.setFullYear)
     })
   })
 
